@@ -118,6 +118,10 @@ ul {
 	list-style: none;
 }
 
+button {
+	border: none;
+}
+
 blockquote,
 q {
 	quotes: none;
