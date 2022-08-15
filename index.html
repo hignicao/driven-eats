@@ -24,38 +24,46 @@
 				<h2>Primeiro, seu prato</h2>
 				<div class="main-course">
 					<button class="dish frango" onclick="selectMainCourse('.frango')">
-						<img src="src/images/frango-yin-yang.svg" alt="frango yin yang" />
-						<h3 class="name-item">Frango Yin Yang</h3>
-						<p>Batata, salada, frango empanado e molho especial</p>
+						<div class="img-description">
+							<img src="src/images/frango.jpg" alt="filé de frango" />
+							<h3 class="name-item">Filé de Frango</h3>
+							<p>Filé de frango com arroz, batata frita e vinagrete</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">19,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish carne" onclick="selectMainCourse('.carne')">
-						<img src="src/images/frango-yin-yang.svg" alt="frango yin yang" />
-						<h3 class="name-item">Carne de Panela</h3>
-						<p>Batata, salada, frango empanado e molho especial</p>
+						<div class="img-description">
+							<img src="src/images/carne-de-panela.jpeg" alt="carne de panela" />
+							<h3 class="name-item">Carne de Panela</h3>
+							<p>Carne de panela com batata assada e farofa</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">29,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish peixe" onclick="selectMainCourse('.peixe')">
-						<img src="src/images/frango-yin-yang.svg" alt="frango yin yang" />
-						<h3 class="name-item">Peixe Frito</h3>
-						<p>peixinho</p>
+						<div class="img-description">
+							<img src="src/images/peixe-frito.jpg" alt="peixe frito" />
+							<h3 class="name-item">Peixe Frito</h3>
+							<p>Peixe frito com salada e arroz</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">22,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish lasagna" onclick="selectMainCourse('.lasagna')">
-						<img src="src/images/frango-yin-yang.svg" alt="frango yin yang" />
-						<h3 class="name-item">Lasagna</h3>
-						<p>simplesmente lasagna</p>
+						<div class="img-description">
+							<img src="src/images/lasagna.jpg" alt="lasagna" />
+							<h3 class="name-item">Lasagna</h3>
+							<p>Lasagna com arroz, porção individual</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">29,90</span></h4>
+							<h4>R$ <span class="price">25,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
@@ -63,47 +71,57 @@
 				<h2>Agora, sua bebida</h2>
 				<div class="drink">
 					<button class="dish coca" onclick="selectDrink('.coca')">
-						<img src="src/images/coquinha.svg" alt="coquinha gelada" />
-						<h3 class="name-item">Coquinha Gelada</h3>
-						<p>Lata 350ml</p>
+						<div class="img-description">
+							<img src="src/images/coquinha.svg" alt="coca gelada" />
+							<h3 class="name-item">Coca Lata</h3>
+							<p>Bem gelada, lata 350ml</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">5,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish guarana" onclick="selectDrink('.guarana')">
-						<img src="src/images/coquinha.svg" alt="coquinha gelada" />
-						<h3 class="name-item">Guaraná</h3>
-						<p>Lata 350ml</p>
+						<div class="img-description">
+							<img src="src/images/guarana.jpg" alt="guarana gelado" />
+							<h3 class="name-item">Guaraná Lata</h3>
+							<p>Bem gelada, lata 350ml</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">4,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish fanta" onclick="selectDrink('.fanta')">
-						<img src="src/images/coquinha.svg" alt="coquinha gelada" />
-						<h3 class="name-item">Fanta</h3>
-						<p>Lata 350ml</p>
+						<div class="img-description">
+							<img src="src/images/fanta.jpg" alt="fanta gelada" />
+							<h3 class="name-item">Fanta</h3>
+							<p>Bem gelada, lata 350ml</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">4,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish agua-s-gas" onclick="selectDrink('.agua-s-gas')">
-						<img src="src/images/coquinha.svg" alt="coquinha gelada" />
-						<h3 class="name-item">Água s/ gás</h3>
-						<p>Lata 350ml</p>
+						<div class="img-description">
+							<img src="src/images/schweppes.jpg" alt="schweppes gelada" />
+							<h3 class="name-item">Schweppes</h3>
+							<p>Bem gelada, lata 350ml</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">5,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish agua-c-gas" onclick="selectDrink('.agua-c-gas')">
-						<img src="src/images/coquinha.svg" alt="coquinha gelada" />
-						<h3 class="name-item">Água c/ gás</h3>
-						<p>Lata 350ml</p>
+						<div class="img-description">
+							<img src="src/images/cocacola.webp" alt="coca cola 2l" />
+							<h3 class="name-item">Coca Cola 2L</h3>
+							<p>Garrafa 2L</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">9,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
@@ -111,29 +129,35 @@
 				<h2>Por fim, sua sobremesa</h2>
 				<div class="dessert">
 					<button class="dish pudim" onclick="selectDessert('.pudim')">
-						<img src="src/images/pudim.svg" alt="pudim" />
-						<h3 class="name-item">Pudim</h3>
-						<p>Apenas dudim</p>
+						<div class="img-description">
+							<img src="src/images/pudim.webp" alt="pudim" />
+							<h3 class="name-item">Pudim</h3>
+							<p>Simplesmente pudim de leite condensado</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">12,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish mousse" onclick="selectDessert('.mousse')">
-						<img src="src/images/pudim.svg" alt="pudim" />
-						<h3 class="name-item">Mousse de Maracujá</h3>
-						<p>Apenas dudim</p>
+						<div class="img-description">
+							<img src="src/images/mousse.jpg" alt="mousse de maracuja" />
+							<h3 class="name-item">Mousse</h3>
+							<p>Mousse de maracujá</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">11,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
 					<button class="dish torta" onclick="selectDessert('.torta')">
-						<img src="src/images/pudim.svg" alt="pudim" />
-						<h3 class="name-item">Torta de Limão</h3>
-						<p>Apenas dudim</p>
+						<div class="img-description">
+							<img src="src/images/torta.webp" alt="torta de limao" />
+							<h3 class="name-item">Torta</h3>
+							<p>Torta de limão</p>
+						</div>
 						<div class="price-selected">
-							<h4>R$ <span class="price">14,90</span></h4>
+							<h4>R$ <span class="price">13,90</span></h4>
 							<ion-icon class="hidden" name="checkmark-circle"></ion-icon>
 						</div>
 					</button>
