@@ -1,143 +1,143 @@
-let mainCoursePrice
-let mainCoursePriceDot
-let drinkPrice
-let drinkPriceDot
-let dessertPrice
-let dessertPriceDot
-let mainCourseName
-let drinkName
-let dessertName
-let pname
-let address
+let mainCoursePrice;
+let mainCoursePriceDot;
+let drinkPrice;
+let drinkPriceDot;
+let dessertPrice;
+let dessertPriceDot;
+let mainCourseName;
+let drinkName;
+let dessertName;
+let pname;
+let address;
 
 function selectMainCourse(itemClass) {
-	const selectedDish = document.querySelector(".main-course .selected")
+	const selectedDish = document.querySelector(".main-course .selected");
 
 	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected")
+		selectedDish.classList.remove("selected");
 	}
 
-	document.querySelector(itemClass).classList.add("selected")
+	document.querySelector(itemClass).classList.add("selected");
 
 	//
 
-	const uncheck = document.querySelector(".main-course .check")
+	const uncheck = document.querySelector(".main-course .check");
 
 	if (uncheck !== null) {
-		uncheck.classList.add("hidden")
-		uncheck.classList.remove("check")
+		uncheck.classList.add("hidden");
+		uncheck.classList.remove("check");
 	}
 
-	const check = document.querySelector(itemClass + " .hidden")
-	check.classList.remove("hidden")
-	check.classList.add("check")
+	const check = document.querySelector(itemClass + " .hidden");
+	check.classList.remove("hidden");
+	check.classList.add("check");
 
 	//
 
-	mainCoursePrice = document.querySelector(itemClass + " .price").innerHTML
-	mainCourseName = document.querySelector(itemClass + " .name-item").innerHTML
+	mainCoursePrice = document.querySelector(itemClass + " .price").innerHTML;
+	mainCourseName = document.querySelector(itemClass + " .name-item").innerHTML;
 
 	//
 
-	closeOrder()
+	closeOrder();
 }
 
 function selectDrink(itemClass) {
-	const selectedDish = document.querySelector(".drink .selected")
+	const selectedDish = document.querySelector(".drink .selected");
 
 	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected")
+		selectedDish.classList.remove("selected");
 	}
 
-	document.querySelector(itemClass).classList.add("selected")
+	document.querySelector(itemClass).classList.add("selected");
 
 	//
 
-	const uncheck = document.querySelector(".drink .check")
+	const uncheck = document.querySelector(".drink .check");
 
 	if (uncheck !== null) {
-		uncheck.classList.add("hidden")
-		uncheck.classList.remove("check")
+		uncheck.classList.add("hidden");
+		uncheck.classList.remove("check");
 	}
 
-	const check = document.querySelector(itemClass + " .hidden")
-	check.classList.remove("hidden")
-	check.classList.add("check")
+	const check = document.querySelector(itemClass + " .hidden");
+	check.classList.remove("hidden");
+	check.classList.add("check");
 
 	//
 
-	drinkPrice = document.querySelector(itemClass + " .price").innerHTML
-	drinkName = document.querySelector(itemClass + " .name-item").innerHTML
+	drinkPrice = document.querySelector(itemClass + " .price").innerHTML;
+	drinkName = document.querySelector(itemClass + " .name-item").innerHTML;
 
 	//
 
-	closeOrder()
+	closeOrder();
 }
 
 function selectDessert(itemClass) {
-	const selectedDish = document.querySelector(".dessert .selected")
+	const selectedDish = document.querySelector(".dessert .selected");
 
 	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected")
+		selectedDish.classList.remove("selected");
 	}
 
-	document.querySelector(itemClass).classList.add("selected")
+	document.querySelector(itemClass).classList.add("selected");
 
 	//
 
-	const uncheck = document.querySelector(".dessert .check")
+	const uncheck = document.querySelector(".dessert .check");
 
 	if (uncheck !== null) {
-		uncheck.classList.add("hidden")
-		uncheck.classList.remove("check")
+		uncheck.classList.add("hidden");
+		uncheck.classList.remove("check");
 	}
 
-	const check = document.querySelector(itemClass + " .hidden")
-	check.classList.remove("hidden")
-	check.classList.add("check")
+	const check = document.querySelector(itemClass + " .hidden");
+	check.classList.remove("hidden");
+	check.classList.add("check");
 
 	//
 
-	dessertPrice = document.querySelector(itemClass + " .price").innerHTML
-	dessertName = document.querySelector(itemClass + " .name-item").innerHTML
+	dessertPrice = document.querySelector(itemClass + " .price").innerHTML;
+	dessertName = document.querySelector(itemClass + " .name-item").innerHTML;
 
 	//
 
-	closeOrder()
+	closeOrder();
 }
 
 function closeOrder() {
-	const order = document.querySelector(".close-order")
+	const order = document.querySelector(".close-order");
 
 	if ((mainCourseName && drinkName && dessertName) !== undefined) {
-		order.innerHTML = "Fechar Pedido"
-		order.classList.add("order-closed")
+		order.innerHTML = "Fechar Pedido";
+		order.classList.add("order-closed");
 	} else if ((mainCourseName && dessertName) !== undefined || (drinkName && dessertName) !== undefined || (mainCourseName && drinkName) !== undefined) {
-		order.innerHTML = "Adicione mais 1 item para fechar o pedido"
+		order.innerHTML = "Adicione mais 1 item para fechar o pedido";
 	} else if (mainCourseName !== undefined || drinkName !== undefined || dessertName !== undefined) {
-		order.innerHTML = "Adicione mais 2 itens para fechar o pedido"
+		order.innerHTML = "Adicione mais 2 itens para fechar o pedido";
 	}
 }
 
 function confirmScreen(button) {
 	if (button.classList.contains("order-closed")) {
-		document.querySelector(".confirm-screen").classList.remove("hidden")
+		document.querySelector(".confirm-screen").classList.remove("hidden");
 	}
 
-	mainCoursePriceDot = mainCoursePrice.replace(",", ".")
-	drinkPriceDot = drinkPrice.replace(",", ".")
-	dessertPriceDot = dessertPrice.replace(",", ".")
+	mainCoursePriceDot = mainCoursePrice.replace(",", ".");
+	drinkPriceDot = drinkPrice.replace(",", ".");
+	dessertPriceDot = dessertPrice.replace(",", ".");
 
-	pname = prompt("Informe o seu nome:")
-	address = prompt("Informe o seu endereço:")
+	pname = prompt("Informe o seu nome:");
+	address = prompt("Informe o seu endereço:");
 
-	document.querySelector(".main-course-name").innerHTML = mainCourseName
-	document.querySelector(".main-course-price").innerHTML = mainCoursePrice
-	document.querySelector(".drink-name").innerHTML = drinkName
-	document.querySelector(".drink-price").innerHTML = drinkPrice
-	document.querySelector(".dessert-name").innerHTML = dessertName
-	document.querySelector(".dessert-price").innerHTML = dessertPrice
-	document.querySelector(".price-total").innerHTML = "R$ " + (Number(mainCoursePriceDot) + Number(drinkPriceDot) + Number(dessertPriceDot)).toFixed(2).replace(".", ",")
+	document.querySelector(".main-course-name").innerHTML = mainCourseName;
+	document.querySelector(".main-course-price").innerHTML = mainCoursePrice;
+	document.querySelector(".drink-name").innerHTML = drinkName;
+	document.querySelector(".drink-price").innerHTML = drinkPrice;
+	document.querySelector(".dessert-name").innerHTML = dessertName;
+	document.querySelector(".dessert-price").innerHTML = dessertPrice;
+	document.querySelector(".price-total").innerHTML = "R$ " + (Number(mainCoursePriceDot) + Number(drinkPriceDot) + Number(dessertPriceDot)).toFixed(2).replace(".", ",");
 }
 
 function openWhatsapp() {
@@ -154,13 +154,13 @@ function openWhatsapp() {
 		"\n\nNome: " +
 		pname +
 		"\nEndereço: " +
-		address
+		address;
 
-	let link = "https://wa.me/5524998338263?text=" + encodeURIComponent(texto)
+	let link = "https://wa.me/5524998338263?text=" + encodeURIComponent(texto);
 
-	window.open(link, "_blank")
+	window.open(link, "_blank");
 }
 
 function exitScreen() {
-	document.querySelector(".confirm-screen").classList.add("hidden")
+	document.querySelector(".confirm-screen").classList.add("hidden");
 }

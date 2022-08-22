@@ -1,5 +1,9 @@
-body {
+* {
 	font-family: "Roboto", sans-serif;
+
+}
+
+body {
 	background: #e5e5e5;
 }
 
@@ -30,6 +34,7 @@ header h1 {
 }
 
 header p {
+	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 21px;
