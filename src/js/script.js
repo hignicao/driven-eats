@@ -7,21 +7,22 @@ let dessertPriceDot;
 let mainCourseName;
 let drinkName;
 let dessertName;
+let priceTotal;
 let pname;
 let address;
 
-function selectMainCourse(itemClass) {
-	const selectedDish = document.querySelector(".main-course .selected");
+function selectItem(itemClass, itemType) {
+	const selectedItem = document.querySelector(itemType + " .selected");
 
-	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected");
+	if (selectedItem !== null) {
+		selectedItem.classList.remove("selected");
 	}
 
 	document.querySelector(itemClass).classList.add("selected");
 
 	//
 
-	const uncheck = document.querySelector(".main-course .check");
+	const uncheck = document.querySelector(itemType + " .check");
 
 	if (uncheck !== null) {
 		uncheck.classList.add("hidden");
@@ -34,72 +35,16 @@ function selectMainCourse(itemClass) {
 
 	//
 
-	mainCoursePrice = document.querySelector(itemClass + " .price").innerHTML;
-	mainCourseName = document.querySelector(itemClass + " .name-item").innerHTML;
-
-	//
-
-	closeOrder();
-}
-
-function selectDrink(itemClass) {
-	const selectedDish = document.querySelector(".drink .selected");
-
-	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected");
+	if (itemType === ".main-course") {
+		mainCoursePrice = document.querySelector(itemClass + " .price").innerHTML;
+		mainCourseName = document.querySelector(itemClass + " .name-item").innerHTML;
+	} else if (itemType === ".drink") {
+		drinkPrice = document.querySelector(itemClass + " .price").innerHTML;
+		drinkName = document.querySelector(itemClass + " .name-item").innerHTML;
+	} else if (itemType === ".dessert") {
+		dessertPrice = document.querySelector(itemClass + " .price").innerHTML;
+		dessertName = document.querySelector(itemClass + " .name-item").innerHTML;
 	}
-
-	document.querySelector(itemClass).classList.add("selected");
-
-	//
-
-	const uncheck = document.querySelector(".drink .check");
-
-	if (uncheck !== null) {
-		uncheck.classList.add("hidden");
-		uncheck.classList.remove("check");
-	}
-
-	const check = document.querySelector(itemClass + " .hidden");
-	check.classList.remove("hidden");
-	check.classList.add("check");
-
-	//
-
-	drinkPrice = document.querySelector(itemClass + " .price").innerHTML;
-	drinkName = document.querySelector(itemClass + " .name-item").innerHTML;
-
-	//
-
-	closeOrder();
-}
-
-function selectDessert(itemClass) {
-	const selectedDish = document.querySelector(".dessert .selected");
-
-	if (selectedDish !== null) {
-		selectedDish.classList.remove("selected");
-	}
-
-	document.querySelector(itemClass).classList.add("selected");
-
-	//
-
-	const uncheck = document.querySelector(".dessert .check");
-
-	if (uncheck !== null) {
-		uncheck.classList.add("hidden");
-		uncheck.classList.remove("check");
-	}
-
-	const check = document.querySelector(itemClass + " .hidden");
-	check.classList.remove("hidden");
-	check.classList.add("check");
-
-	//
-
-	dessertPrice = document.querySelector(itemClass + " .price").innerHTML;
-	dessertName = document.querySelector(itemClass + " .name-item").innerHTML;
 
 	//
 
@@ -137,24 +82,12 @@ function confirmScreen(button) {
 	document.querySelector(".drink-price").innerHTML = drinkPrice;
 	document.querySelector(".dessert-name").innerHTML = dessertName;
 	document.querySelector(".dessert-price").innerHTML = dessertPrice;
-	document.querySelector(".price-total").innerHTML = "R$ " + (Number(mainCoursePriceDot) + Number(drinkPriceDot) + Number(dessertPriceDot)).toFixed(2).replace(".", ",");
+	priceTotal = "R$ " + (Number(mainCoursePriceDot) + Number(drinkPriceDot) + Number(dessertPriceDot)).toFixed(2).replace(".", ",");
+	document.querySelector(".price-total").innerHTML = priceTotal;
 }
 
 function openWhatsapp() {
-	let texto =
-		"Olá, gostaria de fazer o pedido:" +
-		"\n- Prato: " +
-		mainCourseName +
-		"\n- Bebida: " +
-		drinkName +
-		"\n- Sobremesa: " +
-		dessertName +
-		"\nTotal: R$ " +
-		(Number(mainCoursePriceDot) + Number(drinkPriceDot) + Number(dessertPriceDot)).toFixed(2) +
-		"\n\nNome: " +
-		pname +
-		"\nEndereço: " +
-		address;
+	let texto = `Olá, gostaria de fazer o pedido:\n- Prato: ${mainCourseName}\n- Bebida: ${drinkName}\n- Sobremesa: ${dessertName}\nTotal: R$ ${priceTotal}\n\nNome: ${pname}\nEndereço: ${address}`;
 
 	let link = "https://wa.me/5524998338263?text=" + encodeURIComponent(texto);
 
